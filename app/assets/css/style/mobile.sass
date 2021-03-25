@@ -1,0 +1,225 @@
+@import '../mixins/mixins'
+*
+  // outline: 1px solid red
+
+.container
+  font-size: 16px
+  line-height: 1.6
+  .wrapper
+    width: 100%
+    max-width: 640px
+    min-width: 300px
+    font-size: 1em
+    font-weight: 300
+    +margin(0 auto)
+    & + .wrapper
+      +margin(top 1em)
+  .nosale
+    +relative(0)
+    &::after
+      content: '非賣品'
+      display: inline-block
+      background: black
+      color: white
+      font-size: 13px
+      font-weight: 400
+      line-height: 1
+      white-space: nowrap
+      +NotoSans
+      +padding(5px 7px)
+      +margin(left 0.5em)
+      +valign
+  .footer
+    background: $primary
+    color: white
+    text-align: center
+    font-size: 0.8em
+    +padding(1em 0)
+    
+.banner
+  &__title
+    width: 70%
+    +padding(1em 0)
+    +margin(0 auto)
+  &__cont
+    text-align: center
+    line-height: 1.6
+    +padding(1.5em 0)
+  &__btn
+    +padding(0 1em)
+    +margin(2em auto)
+
+.btn
+  text-align: center
+  overflow: hidden
+  +border-radius
+  +margin(1em auto)
+  +transition(all, .15s)
+  &:hover
+    +translate(0, 5%)
+    +opacity(0.8)
+  a
+    background: url('../../images/bg_btn.png') no-repeat 50% 0
+    background-size: 100% 100%
+    font-size: 0
+  span
+    display: inline-block
+    color: white
+    font-weight: 400
+    font-size: 20px
+    +relative(0)
+    +margin(left -0.4em)
+    +padding(0.4em 0)
+    &::before, &::after
+      content: ''
+      display: block
+      +valign
+      left: 100%
+    &::before
+      background: white
+      +margin(left 0.4em)
+      +size(0.9em, 0.9em)
+      +border-radius(50%)
+    &::after
+      +arrow(right, $third, 0.3em)
+      +margin(left 0.75em)
+  &--senc a
+    background: $second
+    span::after
+      +arrow(right, $second, 0.3em)
+
+.row
+  background: $bgColor
+  +padding(bottom 1em)
+  &__cont
+    +padding(1em)
+  &__video iframe
+    width: 100%
+  &__title
+    font-size: 1.2em
+    font-weight: 700
+    text-align: center
+    +flex
+    +serif
+    &.topic
+      +padding(0.5em 0)
+    &__num
+      flex: 1.5
+      background: $primary
+      color: white
+      font-family: serif
+      font-size: 1.6em
+      font-weight: 900
+      letter-spacing: 3px
+      line-height: 1
+      +relative(0)
+      +padding(top 0.7em bottom 0.2em)
+      &::after
+        content: '活動'
+        display: block
+        font-size: 0.4em
+        +size(100%, 100%)
+        +serif
+        +absolute(top 0.7em)
+    &__text
+      flex: 11
+      text-align: left
+      line-height: 1.2
+      +serif
+      +padding(0.3em 0.5em)
+  
+.col
+  +padding(0 1em)
+  & > [class^='col']
+    +margin(top 1em)
+    & + [class^='col']
+      +margin(top 0.7em)
+  &__cont
+    +flex(flex-start, flex-start)
+    &__tag
+      background: $primary
+      color: white
+      white-space: nowrap
+      +padding(0.15em 0.5em)
+      +margin(right 0.5em)
+    &__title
+      font-weight: 700
+      font-size: 1.3em
+      +serif
+    &__info
+      flex: 6
+      white-space: nowrap
+      +padding(left 1em)
+    &__logo
+      flex: 6
+      img
+        width: 70%
+
+.row__cont
+  &--point
+    img
+      width: 80%
+      &:first-child
+        width: 65%
+        +margin(right 0)
+    .row__cont__desc
+      +padding(1em 0)
+
+.col--only
+  +flex
+  flex-flow: column
+  .col__cont
+    +flex(space-between, flex-start)
+    &__title
+      white-space: nowrap
+      span
+        +serif
+        display: inline-block
+        font-size: 0.7em
+      &::after
+        top: 100%
+        +translate(0, -125%)
+    &__img
+      width: 20%
+    & + .col__cont
+      .col__cont__img
+        width: 50%
+      .col__cont__info
+        +padding(left 0)
+        font-size: 0.8em
+        text-align: center
+        img
+          +margin(bottom 0.5em)
+      .ico
+        width: 25px
+        display: inline-block
+        vertical-align: middle
+        +margin(right 0.5em)
+      
+.table
+  &__title
+    +serif
+    color: $primary
+    font-weight: 700
+    text-align: center
+    font-size: 1.2em
+    +padding(0.5em 0)
+  &__group
+    +flex
+    flex-flow: column
+    &__item + &__item
+      +padding(top 0.5em)
+    &__item
+      +flex(flex-start, flex-start)
+      &__img
+        flex: 5
+    &__info
+      flex: 5
+      +padding(left 1em)
+      &__title
+        +serif
+        font-weight: 600
+        border-bottom: 1px solid rgba(black, .3)
+        +padding(bottom 0.2em)
+      &__cont
+        +padding(0.5em 0)
