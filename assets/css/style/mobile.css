@@ -344,14 +344,14 @@
     .table__group__info__cont {
       padding: 0.5em 0; }
 
-.symbol span {
+.symbol {
   position: relative;
   display: inline-block;
   font-family: inherit;
   font-weight: inherit;
   font-size: inherit;
   margin: 0 0.5em; }
-  .symbol span::before, .symbol span::after {
+  .symbol::before, .symbol::after {
     display: block;
     font-family: inherit;
     font-weight: inherit;
@@ -361,9 +361,9 @@
     -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
             transform: translateY(-50%); }
-  .symbol span::before {
+  .symbol::before {
     content: '「';
     right: 100%; }
-  .symbol span::after {
+  .symbol::after {
     content: '」';
     left: 100%; }
