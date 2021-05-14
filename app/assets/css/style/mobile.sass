@@ -212,6 +212,7 @@
       +padding(top 0.5em)
     &__item
       +flex(flex-start, flex-start)
+      width: 100%
       &__img
         flex: 5
     &__info
@@ -224,3 +225,23 @@
         +padding(bottom 0.2em)
       &__cont
         +padding(0.5em 0)
+
+.symbol
+  +relative(0)
+  display: inline-block
+  font-family: inherit 
+  font-weight: inherit
+  font-size: inherit
+  +margin(0 0.5em)
+  &::before, &::after
+    display: block
+    font-family: inherit 
+    font-weight: inherit
+    font-size: inherit
+    +valign
+  &::before
+    content: '「'
+    right: 100%
+  &::after
+    content: '」'
+    left: 100%
