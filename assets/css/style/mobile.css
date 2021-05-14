@@ -343,3 +343,27 @@
       padding-bottom: 0.2em; }
     .table__group__info__cont {
       padding: 0.5em 0; }
+
+.symbol span {
+  position: relative;
+  display: inline-block;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  margin: 0 0.5em; }
+  .symbol span::before, .symbol span::after {
+    display: block;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    top: 50%;
+    position: absolute;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%); }
+  .symbol span::before {
+    content: '「';
+    right: 100%; }
+  .symbol span::after {
+    content: '」';
+    left: 100%; }
